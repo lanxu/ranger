@@ -35,7 +35,7 @@ class CursesShortcuts(SettingsAware):
 
         try:
             self.win.addstr(*args)
-        except (curses.error, TypeError):
+        except (curses.error, TypeError, ValueError):
             if len(args) > 1:
                 self.win.move(y, x)
 
@@ -49,7 +49,7 @@ class CursesShortcuts(SettingsAware):
 
         try:
             self.win.addnstr(*args)
-        except (curses.error, TypeError):
+        except (curses.error, TypeError, ValueError):
             if len(args) > 2:
                 self.win.move(y, x)
 
